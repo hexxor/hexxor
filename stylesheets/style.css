@@ -1,53 +1,111 @@
-function setUpPieces() {
-    //select all the divs with class 'piece'
-    //add the 'light' class to half of them
-    //add the 'dark' to the other half
-    
+div#game {
+    position:relative;
 }
 
-function movePieceTo($piece,newTop,newLeft) {
-    //set the css 'top' and 'left'
-    //attributes of the passed piece
-    //to the arguments newTop and newLeft
+
+div#board {
     
+    float:left;
+    
+    
+    height:382px;
+    width:382px;
+    
+    border-style:solid;
+    border-width:9px;
+    border-color:#DEB887;
 }
 
-function setUpBoard() {
-    //iterate through all of the divs 
-    //with class `square`
-    //figure out whether each one should be
-    //light or dark, and assign the proper class
+div.square {
     
-    //heres a helper function that takes a number between
-    //0 and 63 (inclusive) and returns 1 if the square should be
-    //dark, and 0 if the square should be light
-    function lightOrDark(index) {
-        var x = index % 8;
-        var y = Math.floor(index / 8);
-        var oddX = x % 2;
-        var oddY = y % 2;
-        return (oddX ^ oddY);
-    }
+    float:left;
     
-
-
+    position:relative;
+    
+    width:46px;
+    height:46px;
+    border-width:2px;
+    
+    
+    border-right-style:solid;
+    border-bottom-style:solid;
+    
+    border-color:#444;
 }
 
-function toggleSelect($piece) {
-    //if $piece has the class 'selected',
-    //remove it
-    
-    //if $piece does not have the class 'selected'
-    //make sure no other divs with the class 'piece'
-    //have that class, then set $piece to have the class
-    
+div.square.movable:hover {
+
+    -webkit-box-shadow: inset 0px 0px 8px #FFD700;
+       -moz-box-shadow: inset 0px 0px 8px #FFD700;
+            box-shadow: inset 0px 0px 8px #FFD700;
+    cursor:pointer;
 }
 
-function incrementMoveCount() {
-    //gets the html of the span with id
-    //moveCount
-    //turns it into a number
-    //increments it by one
-    //sets the html of the span with id moveCount
-    //to the new move count
+/* the bottom row */
+div.square:nth-last-child(-n + 8) {
+    border-bottom-style:none;
+}
+
+/* the sides */
+div.square:nth-child(8n) {
+    border-right-style:none;
+}
+
+div.square.light {
+    background-color:#ccc;
+}
+
+div.square.dark {
+    background-color:#333;
+}
+
+div#pieces {
+    position:absolute;
+    /* 9 px puts us inside of the board's borders;*/
+    left:9px;
+    top:9px;
+    background-color:green;
+}
+
+div.piece {
+    position:absolute;
+    width:32px;
+    height:32px;
+    margin:7px;
+    
+    -webkit-box-shadow: 0px 0px 3px #666;
+       -moz-box-shadow: 0px 0px 3px #666;
+            box-shadow: 0px 0px 3px #666;
+    
+    -webkit-border-radius:16px;
+       -moz-border-radius:16px;
+            border-radius:16px;
+            
+    background-color:blue;
+            
+}
+
+div.piece:hover {
+    -webkit-box-shadow: 0px 0px 8px #FFD700;
+       -moz-box-shadow: 0px 0px 8px #FFD700;
+            box-shadow: 0px 0px 8px #FFD700;
+    cursor:pointer;
+}
+
+div.piece.selected {
+    -webkit-box-shadow: 0px 0px 8px #FFD700;
+       -moz-box-shadow: 0px 0px 8px #FFD700;
+            box-shadow: 0px 0px 8px #FFD700;
+}
+    
+div.piece.light {
+    background-color:red;
+}
+
+div.piece.dark {
+    background-color:black;
+}
+
+div#meta {
+    float:right;
 }
