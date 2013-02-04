@@ -1,0 +1,5 @@
+Publikation;Erscheinungstag;Druckprodukt;Startzeit;Produktionsende;Geplante Auflage;Sektion;Papiername;Planungskommentar;?txt_PagesInBroadSheets;Struktur
+Freitag, 7. Dezember 2012
+MDG;2012-12-13;KM_E;2012-12-07 07:40:00;2012-12-07 08:02:00;29000;F1;45 g - Standard;;;
+MDG;2012-12-13;KM_MUC;2012-12-07 08:17:00;2012-12-07 08:56:00;51000;F1;45 g - Standard;;;
+MDG;2012-12-13;KM_A;2012-12-07 09:11:00;2012-12-07 10:59:00;143000;F1;45 g - Standard;;;
