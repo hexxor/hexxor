@@ -73,7 +73,21 @@ $('document').ready(function() {
     //YOUR CODE
     //sets up the classes for the different types of piece
     setUpRuns();
-
+	jQuery.get('export.txt', function(data) {
+	   //process text file line by line
+	   $('div#test').html(data.replace('\n','<br>'));
+	});
+	 
+	//var text2 = 'Hoi Du';
+	var text3 = "1;2;3;4;5\n6;7;8;9;10\n11;12;13;14;15\n";
+	var text4 = $.csv.toArrays(text3,{'separator':';'});
+	// CSV delimited by semicolon:
+	//var text3 = "1;2;3;4;5\n6;7;8;9;10\n11;12;13;14;15\n";
+	//var text4 = $.csv.toArrays(text3,{'separator':';'});
+	//var text3 = "1,2,3,4,5\n6,7,8,9,10\n11,12,13,14,15\n";
+	//var text4 = $.csv.toArrays(text3);
+	
+	//$('div#test').append($('<div id=testdiv>' + text4[1] + '</div>'));		
 });
 
 //global variables for one square
