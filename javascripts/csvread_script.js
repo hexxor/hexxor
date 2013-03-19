@@ -234,7 +234,7 @@ function setRunPosition(time,newDayBegin,runIndex) {
 	var endDateParts = result[runIndex][4].split(' ');
     	var parsedEndDate = endDateParts[0].split('-');
     	var parsedEndTime = endDateParts[1].split(':');
-    	var endTimeDateObject = new Date(parsedEndDate[0], parsedEndDate[1] - 1, parsedEndDate[2], parsedEndDate[0], parsedEndTime[1], parsedEndTime[2]);
+    	var endTimeDateObject = new Date(parsedEndDate[0], parsedEndDate[1] - 1, parsedEndDate[2], parsedEndTime[0], parsedEndTime[1], parsedEndTime[2]);
     	
     	var runDurationInMin = (endTimeDateObject - startingTimeDateObject)/(1000*60);
 	//update the height of the run		
