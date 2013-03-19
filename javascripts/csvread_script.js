@@ -223,7 +223,7 @@ function setPrintingDayClass(time,newDayBegin,$runObject) {
 
 function setRunPosition(time,newDayBegin,runIndex) {
     //decide at what position the Run should be displayed
-	var startdateParts = result[runIndex][3]).split(' ');
+	var startdateParts = result[runIndex][3].split(' ');
     	var parsedStartDate = startdateParts[0].split('-');
     	var parsedStartTime = startdateParts[1].split(':');
     	var startingTimeDateObject = new Date(parsedStartDate[0], parsedStartDate[1] - 1, parsedStartDate[2], parsedStartTime[0], parsedStartTime[1], parsedStartTime[2]);
@@ -231,7 +231,7 @@ function setRunPosition(time,newDayBegin,runIndex) {
 	var startingTimeHours = startingTimeDateObject.getHours();
 	var startingTimeMinutes = startingTimeDateObject.getMinutes();
 	// this calculates the duration in minutes
-	var endDateParts = result[runIndex][4]).split(' ');
+	var endDateParts = result[runIndex][4].split(' ');
     	var parsedEndDate = endDateParts[0].split('-');
     	var parsedEndTime = endDateParts[1].split(':');
     	var endTimeDateObject = new Date(parsedEndDate[0], parsedEndDate[1] - 1, parsedEndDate[2], parsedEndDate[0], parsedEndTime[1], parsedEndTime[2]);
