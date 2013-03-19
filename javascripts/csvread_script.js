@@ -200,14 +200,12 @@ function setPrintingDayClass(time,newDayBegin,$runObject) {
     	var parsedTime = dateParts[1].split(':');
     	var PrintingDayStartObject = new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2]);
     	//console.log("PrintingDayStartObject: " + PrintingDayStartObject);
-	//var PrintingDayStartObject = new Date(Date.parse(time));
 	// Previous day starts 24h before the actual day
-	//var PreviousPrintingDayStartObject = new Date(Date.parse(time)-1000*60*60*24);
 	var PreviousPrintingDayStartObject = new Date();
 	PreviousPrintingDayStartObject.setDate(PrintingDayStartObject.getDate()-1);
-	console.log("PreviousPrintingDayStartObject: " + PreviousPrintingDayStartObject);
+	//console.log("PreviousPrintingDayStartObject: " + PreviousPrintingDayStartObject);
 	var ActualStartObject = new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2]);
-	console.log("ActStartObj: " + ActualStartObject);
+	//console.log("ActStartObj: " + ActualStartObject);
 	var printingDayClass = $.format.date(PrintingDayStartObject,"yy-MM-dd");
 	var previousPrintingDayClass = $.format.date(PreviousPrintingDayStartObject,"yy-MM-dd");
 	// Set the DayStartObject according to the newDayBegin argument which must be in minutes
@@ -225,11 +223,20 @@ function setPrintingDayClass(time,newDayBegin,$runObject) {
 
 function setRunPosition(time,newDayBegin,runIndex) {
     //decide at what position the Run should be displayed
-	var startingTimeDateObject = new Date(Date.parse(result[runIndex][3]));
+	var startdateParts = result[runIndex][3]).split(' ');
+    	var parsedStartDate = startdateParts[0].split('-');
+    	var parsedStartTime = startdateParts[1].split(':');
+    	var startingTimeDateObject = new Date(parsedStartDate[0], parsedStartDate[1] - 1, parsedStartDate[2], parsedStartTime[0], parsedStartTime[1], parsedStartTime[2]);
+    	//var startingTimeDateObject = new Date(Date.parse(result[runIndex][3]));
 	var startingTimeHours = startingTimeDateObject.getHours();
 	var startingTimeMinutes = startingTimeDateObject.getMinutes();
 	// this calculates the duration in minutes
-	var runDurationInMin = (Date.parse(result[runIndex][4]) - Date.parse(result[runIndex][3]))/(1000*60);
+	var endDateParts = result[runIndex][4]).split(' ');
+    	var parsedEndDate = endDateParts[0].split('-');
+    	var parsedEndTime = endDateParts[1].split(':');
+    	var endTimeDateObject = new Date(parsedEndDate[0], parsedEndDate[1] - 1, parsedEndDate[2], parsedEndDate[0], parsedEndTime[1], parsedEndTime[2]);
+    	
+    	var runDurationInMin = (endTimeDateObject - startingTimeDateObject)/(1000*60);
 	//update the height of the run		
 	$('#runNo' + runIndex).height(runDurationInMin*(slotHeight+border)/slotDurationInMin);				
 	//calculate the Pixels according to the Line and the starting time
