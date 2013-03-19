@@ -194,17 +194,19 @@ function generateResult() {
 function setPrintingDayClass(time,newDayBegin,$runObject) {
     //decide whether the time is before or after the newDayBegin
     //add the class of the corresponding PrintingDayClass
-    	console.log("Params: " + time + " " + newDayBegin);
+    	//console.log("Params: " + time + " " + newDayBegin);
     	var dateParts = time.split(' ');
     	var parsedDate = dateParts[0].split('-');
     	var parsedTime = dateParts[1].split(':');
-    	var parsedDateTime = new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2])
-    	console.log("parsedDateTime: " + parsedDateTime);
-	var PrintingDayStartObject = new Date(Date.parse(time));
+    	var PrintingDayStartObject = new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2]);
+    	//console.log("PrintingDayStartObject: " + PrintingDayStartObject);
+	//var PrintingDayStartObject = new Date(Date.parse(time));
 	// Previous day starts 24h before the actual day
-	var PreviousPrintingDayStartObject = new Date(Date.parse(time)-1000*60*60*24);
+	//var PreviousPrintingDayStartObject = new Date(Date.parse(time)-1000*60*60*24);
+	var PreviousPrintingDayStartObject = new Date();
+	PreviousPrintingDayStartObject.setDate(PrintingDayStartObject.getDate()-1);
 	console.log("PreviousPrintingDayStartObject: " + PreviousPrintingDayStartObject);
-	var ActualStartObject = new Date(Date.parse(time));
+	var ActualStartObject = new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2]);
 	console.log("ActStartObj: " + ActualStartObject);
 	var printingDayClass = $.format.date(PrintingDayStartObject,"yy-MM-dd");
 	var previousPrintingDayClass = $.format.date(PreviousPrintingDayStartObject,"yy-MM-dd");
