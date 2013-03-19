@@ -1,4 +1,3 @@
-
 //global variables for the production schedule
 var TimeAxisName = 'Time';
 var slotWidth = 170;
@@ -205,11 +204,11 @@ function setPrintingDayClass(time,newDayBegin,$runObject) {
 	PrintingDayStartObject.setHours(newDayBegin/60);
 	PrintingDayStartObject.setMinutes(newDayBegin%60);
 	if (PrintingDayStartObject < ActualStartObject) {
-		//console.log("This is after Daybegin");
+		console.log(printingDayClass + "This is after Daybegin");
 		$runObject.addClass(printingDayClass);
 		}
 	else {
-		//console.log("This is before Daybegin");
+		console.log(printingDayClass + "This is before Daybegin");
 		$runObject.addClass(previousPrintingDayClass);
 		}
 }
