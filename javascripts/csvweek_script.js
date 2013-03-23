@@ -25,7 +25,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
     //and appends it to the div with id 'page'
     $('div#page').append($('<div id=' + weekDayCols[w] +'>' + weekDayCols[w] + '</div>').addClass('weekDay'));
     if (weekDayCols[w] === TimeAxisName) {
-        $('#'+weekDayCols[w]).addClass('time');
+        $('#'+weekDayCols[w]).addClass('time').removeClass('weekDay');
     };  
     // set width of the columns to split evenly in the
     $('.weekDay').width(97/weekDayCols.length+'%');    
@@ -33,7 +33,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
     for (var i = 0;i<columnNames.length;i++) {
         //this line creates a new div with the class 'column'
         //and appends it to the div with id 'weekDayCols[w]'
-            $('div#' + weekDayCols[w]).append($('<div id=' + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));
+            $('div#' + weekDayCols[w]).append($('<div id=' + weekDayCols[w] + "_" + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));
         // set width of the columns to split evenly in the
         $('.column').width(94/columnNames.length+'%');	
         
