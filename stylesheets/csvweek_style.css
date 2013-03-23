@@ -47,6 +47,7 @@ div.column {
 border-top-style:solid;
     
     border-color:#444;
+    margin-top:20px;
 }
 div.column:first-child {
     border-left-style:solid;
