@@ -14,7 +14,7 @@ div#page {
     border-style:none;
 }
 div.weekDay:first-child {
-    border-left-style:solid;
+    border-style:none;
 }
 div.weekDay {
     
@@ -24,13 +24,9 @@ div.weekDay {
     
     /*width:200px;*/
     height:100%;
-    border-width:2px;
+    border-style:none;
     
-    
-    border-right-style:solid;
-border-top-style:solid;
-    
-    border-color:#444;
+    border-color:#222;
 }
 div.column:first-child {
     border-left-style:solid;
