@@ -23,7 +23,7 @@ $('document').ready(function() {
 for (var w = 0;w<weekDayCols.length;w++) {   
     //this line creates a new div with the class 'weekDay'
     //and appends it to the div with id 'page'
-    $('div#page').append($('<div id=' + weekDayCols[w] +'><div class=columnTitle' + weekDayCols[w] +'</div></div>').addClass('weekDay'));
+    $('div#page').append($('<div id=' + weekDayCols[w] +'><div class=columnTitle>' + weekDayCols[w] +'</div></div>').addClass('weekDay'));
     if (weekDayCols[w] === TimeAxisName) {
         $('#'+weekDayCols[w]).addClass('timeaxis').removeClass('weekDay');
     };  
@@ -41,7 +41,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
     
 }
 $('.weekDay').width(97/weekDayCols.length+'%');  
-$('.time').width(97/weekDayCols.length+'%');     
+$('.timeaxis').width(97/weekDayCols.length+'%');     
 $('.column').width(97/columnNames.length+'%');        
 for (var y = 0;y<slotCount;y++) {
         
