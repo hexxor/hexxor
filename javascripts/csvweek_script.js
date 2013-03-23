@@ -9,7 +9,7 @@ var slotDurationInMin = 15;
 // set total time shown in one page
 var pageDurationInMin = 24*60;
 var slotCount = pageDurationInMin/slotDurationInMin;
-var columnNames = [TimeAxisName,"F1","F2"];
+var columnNames = ["F1","F2"];
 var weekDayCols = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var filename = 'LongtermPlanningExport.csv';
 //var filename = 'export.txt';
