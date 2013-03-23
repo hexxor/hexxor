@@ -1,5 +1,5 @@
 //global variables for the production schedule
-var TimeAxisName = 'Time';
+var TimeAxisName = 'Zeit';
 var slotWidth = 170;
 var slotHeight= 20;
 var border = 2;
@@ -10,6 +10,7 @@ var slotDurationInMin = 15;
 var pageDurationInMin = 24*60;
 var slotCount = pageDurationInMin/slotDurationInMin;
 var columnNames = [TimeAxisName,"F1","F2"];
+var weekDayCols = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var filename = 'LongtermPlanningExport.csv';
 //var filename = 'export.txt';
 var selectedDateObject = new Date();
@@ -19,29 +20,35 @@ var selectedDate = $.format.date(selectedDateObject,"yy-MM-dd");
 $('document').ready(function() {
 
     //Setup up the background grid
-for (var i = 0;i<columnNames.length;i++) {
+for (var w = 0;w<weekDayCols.length;w++) {   
+    //this line creates a new div with the class 'weekDay'
+    //and appends it to the div with id 'page'
+    $('div#page').append($('<div id=' + weekDayCols[w] +'>' + weekDayCols[w] + '</div>').addClass('weekDay'));
+    if (weekDayCols[w] === TimeAxisName) {
+        $('#'+weekDayCols[w]).addClass('time');
+    };  
+    // set width of the columns to split evenly in the
+    $('.weekDay').width(97/weekDayCols.length+'%');    
+        
+    for (var i = 0;i<columnNames.length;i++) {
         //this line creates a new div with the class 'column'
-        //and appends it to the div with id 'page'
-        $('div#page').append($('<div id=' + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));
-//and appends it to the div with id 'page'
-if (columnNames[i] === TimeAxisName) {
-$('#'+columnNames[i]).addClass('time');
-};  
-// set width of the columns to split evenly in the
-$('.column').width(97/columnNames.length+'%');	
-for (var y = 0;y<slotCount;y++) {
-
-//this line creates a new div with the class 'slot'
-//and appends it to the div with id 'page'
-if (columnNames[i] === TimeAxisName) {
-$('div#'+ columnNames[i]).append($('<div/>').addClass('slot time'));
-}
-else {
-$('div#'+ columnNames[i]).append($('<div/>').addClass('slot'));
-};
-};
+        //and appends it to the div with id 'weekDayCols[w]'
+            $('div#' + weekDayCols[w]).append($('<div id=' + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));
+        // set width of the columns to split evenly in the
+        $('.column').width(97/columnNames.length+'%');	
+        for (var y = 0;y<slotCount;y++) {
+        
+            //this line creates a new div with the class 'slot'
+            //and appends it to the div with id 'page'
+            if (columnNames[i] === TimeAxisName) {
+                $('div#'+ columnNames[i]).append($('<div/>').addClass('slot time'));
+            }
+            else {
+            $('div#'+ columnNames[i]).append($('<div/>').addClass('slot'));
+            };
+        };
     }
-
+}
     //set up the planning with the correct classes
     setUpPage();
 setUpDatePicker();
