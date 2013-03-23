@@ -10,7 +10,7 @@ var slotDurationInMin = 15;
 var pageDurationInMin = 24*60;
 var slotCount = pageDurationInMin/slotDurationInMin;
 var columnNames = ["F1","F2"];
-var weekDayCols = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var weekDayCols = [TimeAxisName, "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var filename = 'LongtermPlanningExport.csv';
 //var filename = 'export.txt';
 var selectedDateObject = new Date();
@@ -35,20 +35,23 @@ for (var w = 0;w<weekDayCols.length;w++) {
         //and appends it to the div with id 'weekDayCols[w]'
             $('div#' + weekDayCols[w]).append($('<div id=' + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));
         // set width of the columns to split evenly in the
-        $('.column').width(97/columnNames.length+'%');	
-        for (var y = 0;y<slotCount;y++) {
+        $('.column').width(94/columnNames.length+'%');	
         
-            //this line creates a new div with the class 'slot'
-            //and appends it to the div with id 'page'
-            if (columnNames[i] === TimeAxisName) {
-                $('div#'+ columnNames[i]).append($('<div/>').addClass('slot time'));
-            }
-            else {
-            $('div#'+ columnNames[i]).append($('<div/>').addClass('slot'));
-            };
-        };
     }
 }
+for (var y = 0;y<slotCount;y++) {
+        
+    //this line creates a new div with the class 'slot'
+    //and appends it to the div with id 'page'
+   $('.column').append($('<div/>').addClass('slot'));
+};
+for (var y = 0;y<slotCount+1;y++) {
+        
+    //this line creates a new div with the class 'slot'
+    //and appends it to the div with id 'page'
+   $('.time').append($('<div/>').addClass('slot time'));
+};
+
     //set up the planning with the correct classes
     setUpPage();
 setUpDatePicker();
