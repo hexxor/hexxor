@@ -23,9 +23,9 @@ $('document').ready(function() {
 for (var w = 0;w<weekDayCols.length;w++) {   
     //this line creates a new div with the class 'weekDay'
     //and appends it to the div with id 'page'
-    $('div#page').append($('<div id=' + weekDayCols[w] +'>' + weekDayCols[w] + '</div>').addClass('weekDay'));
+    $('div#page').append($('<div id=' + weekDayCols[w] +'><div class=columnTitle' + weekDayCols[w] +'</div></div>').addClass('weekDay'));
     if (weekDayCols[w] === TimeAxisName) {
-        $('#'+weekDayCols[w]).addClass('time').removeClass('weekDay');
+        $('#'+weekDayCols[w]).addClass('timeaxis').removeClass('weekDay');
     };  
     // set width of the columns to split evenly in the
         
@@ -42,7 +42,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
 }
 $('.weekDay').width(97/weekDayCols.length+'%');  
 $('.time').width(97/weekDayCols.length+'%');     
-$('.column').width(94/columnNames.length+'%');        
+$('.column').width(97/columnNames.length+'%');        
 for (var y = 0;y<slotCount;y++) {
         
     //this line creates a new div with the class 'slot'
@@ -53,7 +53,7 @@ for (var y = 0;y<(slotCount+1);y++) {
         
     //this line creates a new div with the class 'slot'
     //and appends it to the div with id 'page'
-   $('.time').append($('<div/>').addClass('slot time'));
+   $('.timeaxis').append($('<div/>').addClass('slot time'));
 };
 
     //set up the planning with the correct classes
