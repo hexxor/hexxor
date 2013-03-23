@@ -13,6 +13,28 @@ div#page {
     
     border-style:none;
 }
+div.weekDay:first-child {
+    border-left-style:solid;
+}
+div.weekDay {
+    
+    float:left;
+    
+    position:relative;
+    
+    /*width:200px;*/
+    height:100%;
+    border-width:2px;
+    
+    
+    border-right-style:solid;
+border-top-style:solid;
+    
+    border-color:#444;
+}
+div.column:first-child {
+    border-left-style:solid;
+}
 
 div.column {
     
