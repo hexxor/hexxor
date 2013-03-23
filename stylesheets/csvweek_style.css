@@ -1,0 +1,96 @@
+div#planning {
+    position:relative;
+}
+
+
+div#page {
+    
+    float:left;
+    
+    
+    height:100%;
+    width:98%;
+    
+    border-style:none;
+}
+
+div.column {
+    
+    float:left;
+    
+    position:relative;
+    
+    /*width:200px;*/
+    height:100%;
+    border-width:2px;
+    
+    
+    border-right-style:solid;
+border-top-style:solid;
+    
+    border-color:#444;
+}
+div.column:first-child {
+    border-left-style:solid;
+}
+
+div.slot {
+    
+    float:left;
+    
+    position:relative;
+    
+    width:100%;
+    height:20px;
+    border-width:2px;
+    
+    
+    border-bottom-style:solid;
+    
+    border-color:#444;
+}
+div.slot:first-child {
+    border-top-style:solid;
+}
+
+div.column.light {
+    background-color:#fff;
+}
+
+div.column.dark {
+    background-color:#ccc;
+}
+
+div#runs {
+    position:absolute;
+    /* 2 px puts us inside of the column's borders;*/
+    left:2px;
+    top:2px;
+    background-color:green;
+}
+
+div.run {
+    position:absolute;
+    /*width:32px;*/
+    height:32px;
+    /*margin:2px;*/
+    /*
+-webkit-border-radius:1px;
+-moz-border-radius:1px;
+border-radius:1px;
+*/
+    background-color:Orange;
+            
+}
+    
+div.run.light {
+    background-color:OrangeRed;
+}
+
+p {
+display: inline;
+-webkit-margin-before: 0px;
+-webkit-margin-after: 0px;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
