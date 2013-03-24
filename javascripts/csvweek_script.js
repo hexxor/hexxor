@@ -33,9 +33,9 @@ for (var w = 0;w<weekDayCols.length;w++) {
         //this line creates a new div with the class 'column'
         //and appends it to the div with id 'weekDayCols[w]'
             $('div#' + weekDayCols[w]).append($('<div id=' + weekDayCols[w] + "_" + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));                
-        };
-    }; 
-};
+        }
+    } 
+}
 // set width of the columns to split evenly in the        
 $('.weekDay').width(97/weekDayCols.length+'%');  
 $('.timeaxis').width(97/weekDayCols.length+'%');     
@@ -45,13 +45,13 @@ for (var y = 0;y<slotCount;y++) {
     //this line creates a new div with the class 'slot'
     //and appends it to the div with id 'page'
    $('.column').append($('<div/>').addClass('slot'));
-};
+}
 for (var y = 0;y<(slotCount+1);y++) {
         
     //this line creates a new div with the class 'slot'
     //and appends it to the div with id 'page'
    $('.timeaxis').append($('<div/>').addClass('slot time'));
-};
+}
 
     //set up the planning with the correct classes
     setUpPage();
