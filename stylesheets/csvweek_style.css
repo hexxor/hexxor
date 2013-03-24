@@ -20,6 +20,7 @@ div.timeaxisSubtitle {
     border-width:2px;        
     border-right-style:solid;
     border-top-style:solid;    
+    border-bottom-style:solid;    
     border-color:#444;
 }
 div.timeaxis {
