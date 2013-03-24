@@ -26,7 +26,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
     $('div#page').append($('<div id=' + weekDayCols[w] +'><div class=columnTitle>' + weekDayCols[w] +'</div></div>').addClass('weekDay'));
     if (weekDayCols[w] === TimeAxisName) {
         $('#'+weekDayCols[w]).addClass('timeaxis').removeClass('weekDay');
-        $('#'+weekDayCols[w]).append($('<div>Falz</div>'));               
+        $('#'+weekDayCols[w]).append($('<div class=timeaxisSubtitle>Falz</div>'));               
     }
     else {
         for (var i = 0;i<columnNames.length;i++) {
