@@ -27,14 +27,14 @@ for (var w = 0;w<weekDayCols.length;w++) {
     if (weekDayCols[w] === TimeAxisName) {
         $('#'+weekDayCols[w]).addClass('timeaxis').removeClass('weekDay');
         $('#'+weekDayCols[w]).append$('<div>Falz</div>');               
-    };
+    }
     else {
         for (var i = 0;i<columnNames.length;i++) {
         //this line creates a new div with the class 'column'
         //and appends it to the div with id 'weekDayCols[w]'
             $('div#' + weekDayCols[w]).append($('<div id=' + weekDayCols[w] + "_" + columnNames[i] +'>' + columnNames[i] + '</div>').addClass('column'));                
         }
-    } 
+    }; 
 }
 // set width of the columns to split evenly in the        
 $('.weekDay').width(97/weekDayCols.length+'%');  
