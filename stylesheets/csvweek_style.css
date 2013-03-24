@@ -16,7 +16,7 @@ div#page {
 div.timeaxis:first-child {
     border-style:none;
 }
-div.timeaxisDescription {
+div.timeaxisSubtitle {
     border-width:2px;        
     border-right-style:solid;
     border-top-style:solid;    
