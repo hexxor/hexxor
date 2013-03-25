@@ -65,7 +65,9 @@ div.column {
     border-top-style:solid;    
     border-color:#444;
 }
-
+div.slot:first-child {
+    border-top-style:solid;    
+}
 div.slot {
     
     float:left;    
