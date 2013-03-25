@@ -27,9 +27,12 @@ div.timeaxis {
     /*width:200px;*/
     height:100%;
     border-left-style:solid;
-    border-right-style:solid;
+    border-right-style:none;
     border-top-style:solid;      
     border-color:#444;
+}
+div.weekDay:last-child {
+    border-right-style:solid;
 }
 div.weekDay {
     
@@ -39,7 +42,7 @@ div.weekDay {
     /*width:200px;*/
     height:100%;
     border-left-style:solid;
-    border-right-style:solid;
+    border-right-style:none;
     border-top-style:solid;      
     border-color:#444;
 }
