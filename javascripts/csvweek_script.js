@@ -45,28 +45,12 @@ for (var y = 0;y<slotCount;y++) {
     //this line creates a new div with the class 'slot'
     //and appends it to the div with id 'page'
    $('.column').append($('<div/>').addClass('slot'));
-}
-for (var y = 0;y<(slotCount+1);y++) {
-        
-    //this line creates a new div with the class 'slot'
-    //and appends it to the div with id 'page'
    $('.timeaxis').append($('<div/>').addClass('slot time'));
 }
-
     //set up the planning with the correct classes
     setUpPage();
 setUpDatePicker();
 setUpTimeLabels();
-//create some sample runs
-// var ProductionRuns = [
-// [0,"F1","2013-01-01","AZ","EF1","100'000","360","100"],
-// [1,"F2","2013-01-02","AZ","EF2","100'000","420","30"],
-// [2,"F3","2013-01-02","AZ","EF3","100'000","480","88"],
-// [3,"F1","2013-01-03","AZ","EF4","100'000","460","30"],
-// [4,"F1","2013-01-03","AZ","EF5","100'000","490","60"],
-// [5,"F1","2013-01-03","AZ","EF6","100'000","600","45"],
-// [6,"F1","2013-01-03","AZ","EF7","100'000","645","20"]
-// ];
 
     //sets up the classes for the different types of piece
     var result = [];
@@ -181,6 +165,23 @@ generateResult();
 setUpRuns();	
 });
 }
+
+function parseDateString(DateString) {
+    var dateParts = DateString.split(' ');
+    var parsedDate = dateParts[0].split('-');
+    var parsedTime = dateParts[1].split(':');
+    return new Date(parsedDate[0], parsedDate[1] - 1, parsedDate[2], parsedTime[0], parsedTime[1], parsedTime[2]);     
+}
+
+function processResult(startingDateTimeString) {
+    var dateTimeObject = parseDateString(startingDateTimeString);
+    if ((dateTimeObject.getHours()*60+dateTimeObject.getMinutes())>= dayBegin) {
+        // PrintingDay equals date of selectedDateObject
+        pass;
+        
+    }
+}
+
 function generateResult() {
     //print out the result array to the console
 //console.log(result);
@@ -201,6 +202,8 @@ setRunPosition(result[i][3],dayBegin,i);
 $( '#datepicker' ).val("Hier klicken...");
 
 }
+
+
 
 function setPrintingDayClass(time,newDayBegin,$runObject) {
     //decide whether the time is before or after the newDayBegin
