@@ -16,7 +16,6 @@ div#page {
 
 div.timeaxisSubtitle {
     border-width:2px;        
-    border-right-style:solid;
     border-top-style:solid;    
     border-bottom-style:solid;    
     border-color:#444;
@@ -44,7 +43,10 @@ div.weekDay {
     border-color:#444;
 }
 div.column:first-child {
-    border-left-style:solid;
+    border-left-style:none;
+}
+div.column:last-child {
+    border-right-style:none;
 }
 
 div.column {
