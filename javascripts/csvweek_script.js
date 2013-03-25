@@ -39,7 +39,7 @@ for (var w = 0;w<weekDayCols.length;w++) {
 // set width of the columns to split evenly in the        
 $('.weekDay').width(97/weekDayCols.length+'%');  
 $('.timeaxis').width(97/weekDayCols.length+'%');     
-$('.column').width(100/columnNames.length+'%');        
+$('.column').width(99/columnNames.length+'%');        
 for (var y = 0;y<slotCount;y++) {
         
     //this line creates a new div with the class 'slot'
