@@ -48,8 +48,11 @@ div.weekDay {
 }
 div.column:first-child {
     border-left-style:none;
+    border-right-style:solid;
+    
 }
 div.column:last-child {
+    border-left-style:none;    
     border-right-style:none;
 }
 
@@ -60,7 +63,7 @@ div.column {
     /*width:200px;*/
     height:100%;
     border-width:1px;    
-    border-left-style:solid;
+    border-left-style:none;
     border-right-style:solid;
     border-top-style:solid;    
     border-color:#444;
