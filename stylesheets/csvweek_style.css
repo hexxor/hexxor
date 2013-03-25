@@ -15,7 +15,7 @@ div#page {
 }
 
 div.timeaxisSubtitle {
-    border-width:2px;        
+    border-width:1px;        
     border-top-style:solid;    
     border-bottom-style:solid;    
     border-color:#444;
@@ -34,6 +34,7 @@ div.timeaxis {
 div.weekDay {
     
     float:left;    
+    text-align: center;        
     position:relative;    
     /*width:200px;*/
     height:100%;
@@ -55,7 +56,7 @@ div.column {
     position:relative;    
     /*width:200px;*/
     height:100%;
-    border-width:2px;    
+    border-width:1px;    
     border-left-style:solid;
     border-right-style:solid;
     border-top-style:solid;    
@@ -68,7 +69,7 @@ div.slot {
     position:relative;    
     width:100%;
     height:20px;
-    border-width:2px;        
+    border-width:1px;        
     border-bottom-style:solid;    
     border-color:#444;
 }
